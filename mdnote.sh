@@ -40,6 +40,27 @@ if ! cp -r "$TEMPLATE_DIR" "$NOTE_NAME"; then
   exit 1
 fi
 
+# Replace note.md and note.pdf with the user-specified name in Makefile
+if ! sed -i '' "s/note\.md/${NOTE_NAME}.md/g; s/note\.pdf/${NOTE_NAME}.pdf/g" "$NOTE_NAME/Makefile"; then
+  echo -e "${RED}Error:${NC} Failed to update Makefile"
+  exit 1
+fi
+
+# Rename the template files to match the user-specified name
+if [ -f "$NOTE_NAME/note.md" ]; then
+  if ! mv "$NOTE_NAME/note.md" "$NOTE_NAME/${NOTE_NAME}.md"; then
+    echo -e "${RED}Error:${NC} Failed to rename note.md"
+    exit 1
+  fi
+fi
+
+if [ -f "$NOTE_NAME/note.pdf" ]; then
+  if ! mv "$NOTE_NAME/note.pdf" "$NOTE_NAME/${NOTE_NAME}.pdf"; then
+    echo -e "${RED}Error:${NC} Failed to rename note.pdf"
+    exit 1
+  fi
+fi
+
 echo ""
 echo -e "${GREEN}✓ Successfully created${NC} ${CYAN}$NOTE_NAME${NC}"
 echo ""
