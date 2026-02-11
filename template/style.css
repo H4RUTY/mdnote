@@ -11,7 +11,7 @@
   --font-sans: 'Avenir', 'Zen Kaku Gothic New', sans-serif;
   --radius: 8px;
   --page-margin: 20mm;
-  --line-height: 1.65;
+  --line-height: 1.5;
 }
 
 @page {
@@ -27,7 +27,7 @@ body {
   font-size: 13px;
   margin: 0 auto;
   max-width: 750px;
-  padding: 10mm 0;
+  padding: 0;
 }
 
 /* セクション間の余白 */
@@ -115,7 +115,6 @@ pre {
 
 /* インラインコード */
 code {
-  background: #e1ecf8;
   padding: 0 0.3rem;
   font-family: var(--code-font);
   border-radius: 4px;
