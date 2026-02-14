@@ -7,7 +7,7 @@
   --accent: #3b8dae;
   --code-bg: #f8fafc;
   --code-border: #e2e8f0;
-  --code-font: 'IBM Plex Mono', 'Zen Kaku Gothic New', Menlo, monospace;
+  --code-font: 'IBM Plex Mono', Menlo, 'Zen Kaku Gothic New', monospace;
   --font-sans: 'Avenir', 'Zen Kaku Gothic New', sans-serif;
   --radius: 8px;
   --page-margin: 20mm;
@@ -25,7 +25,7 @@ body {
   color: var(--text-color);
   line-height: var(--line-height);
   font-size: 13px;
-  margin: 0 auto;
+  margin: 0;
   max-width: 750px;
   padding: 0;
 }
