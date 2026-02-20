@@ -1,6 +1,6 @@
 Markdownから美しいpdf書類を作成するツール
 
-[![PDF Preview](preview.png)](template/note.pdf)
+[📄 サンプルPDFを見る](template/note.pdf)
 
 ## 1. `md-to-pdf` のインストール
 
@@ -11,7 +11,7 @@ Markdownから美しいpdf書類を作成するツール
 npm i -g md-to-pdf
 ```
 
-Big thanks to [simonhaenisch / md-to-pdf](https://github.com/simonhaenisch/md-to-pdf)!
+Big thanks to [simonhaenisch / md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) !
 
 ## 2. 'mdnote' コマンド登録
 
