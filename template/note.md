@@ -33,7 +33,7 @@ pdf_options:
 # 使い方ガイド
 
 > Design is how it works.  
-> —スティーブ・ジョブズ
+> —Steve Jobs
 
 ---
 

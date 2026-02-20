@@ -39,6 +39,7 @@
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 32px;
+  --space-xl: 48px;
 
   /* === Typography === */
   --fz-h1: 32px;
@@ -128,18 +129,18 @@ a {
 }
 
 blockquote {
-  margin: var(--space-lg);
-  padding: var(--space-xxs) 0 var(--space-xxs) var(--space-md);
+  margin: var(--space-lg) 0 var(--space-lg) var(--space-md);
+  padding: var(--space-xxs) 0 var(--space-xxs) var(--space-lg);
   border-left: 2px solid var(--clr-accent);
 }
 
 pre {
+  margin: var(--space-lg) 0;
   background-color: var(--clr-bg-pre);
   border-radius: var(--radius-md);
   border: 1px solid var(--clr-border);
   overflow-x: auto;
   font-family: var(--font-code);
-  margin: var(--space-md) 0;
 }
 
 code {
@@ -148,8 +149,8 @@ code {
 }
 
 table {
+  margin: var(--space-lg) 0;
   width: 99%;
-  margin: var(--space-md) 0;
   border-spacing: 0;
 }
 
@@ -191,11 +192,11 @@ tbody tr:nth-child(odd) {
 hr {
   border: none;
   border-top: 0.5px solid var(--clr-border);
-  margin: var(--space-lg) 0;
+  margin: var(--space-xl) 0;
 }
 
 figure {
-  margin: var(--space-md) auto;
+  margin: var(--space-lg) auto;
   max-width: 100%;
   text-align: center;
 }
