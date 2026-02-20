@@ -40,7 +40,6 @@ pdf_options:
 ## ファイル構成
 
 ```zsh
-.
 ├── Makefile
 ├── [your_note].md
 ├── [your_note].pdf
