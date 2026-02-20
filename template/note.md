@@ -32,6 +32,9 @@ pdf_options:
 
 # 使い方ガイド
 
+> Design is how it works.  
+> —Steve Jobs
+
 ---
 
 ## ファイル構成
@@ -48,7 +51,7 @@ pdf_options:
 
 - このファイルにより, pdf化のための長いコマンドを入力する必要がなくなります.
 - シンタックスハイライトは, デフォルトでは`github`スタイルになっています.  
-  `md-to-pdf`の`--highlight-style`オプションは, 内部的に`highlight.js`を用いているため, そのスタイルならなんでも指定できます.
+  `md-to-pdf`の`--highlight-style`オプションは, 内部的に`highlight.js`を用いているため, そのスタイルならなんでも指定できます. ( https://github.com/highlightjs/highlight.js/tree/main/src/styles を参照.)
 - pdfを作成したいときはただ一言, "`make`".
 
 ### `[your_note].md`
@@ -127,8 +130,3 @@ pdf_options:
   [tips] vimをお使いのあなたへ... `:%d`でファイルの全内容を削除.
 2. 何か書く
 3. `make`コマンドを入力してpdfを作成する
-
-<br><br>
-
-> Design is how it works.  
-> —Steve Jobs

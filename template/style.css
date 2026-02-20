@@ -11,14 +11,16 @@
   --black-90:  oklch(0.9 0.01 240);
   --black-100: oklch(1.0    0   0);
 
+  --blue-60: oklch(0.6 0.10 260);
   --blue-70: oklch(0.7 0.10 260);
 
   --clr-text-main: var(--black-10);
   --clr-text-heading: var(--black-20);
+  --clr-text-link: var(--blue-60);
   --clr-text-muted: var(--black-40);
 
   --clr-bg-main: var(--black-100);
-  --clr-bg-pre: var(--black-60);
+  --clr-bg-pre: var(--black-100);
   --clr-bg-th: var(--black-100);
   --clr-bg-tbody-even: var(--black-100);
   --clr-bg-tbody-odd: var(--black-100);
@@ -73,11 +75,16 @@ body {
   padding: 0;
 }
 
+blockquote, figure {
+  break-inside: avoid;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: var(--lh-lg);
   color: var(--clr-text-heading);
   margin: var(--space-lg) 0 var(--space-sm) 0;
+  break-after: avoid;
 }
 
 h1 {
@@ -109,7 +116,7 @@ li {
 }
 
 a {
-  color: var(--clr-text-muted);
+  color: var(--clr-text-link);
 }
 
 blockquote {
@@ -133,6 +140,7 @@ code {
 }
 
 table {
+  width: 99%;
   line-height: var(--lh-lg);
   margin: var(--space-md) 0;
   border-spacing: 0;
