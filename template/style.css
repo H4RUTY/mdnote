@@ -11,8 +11,8 @@
   --black-90:  oklch(0.9 0.01 240);
   --black-100: oklch(1.0    0   0);
 
-  --blue-60: oklch(0.6 0.10 260);
-  --blue-70: oklch(0.7 0.10 260);
+  --blue-60: oklch(0.6 0.05 260);
+  --blue-70: oklch(0.7 0.05 260);
 
   --clr-text-main: var(--black-10);
   --clr-text-heading: var(--black-20);
@@ -47,8 +47,7 @@
   --fz-h4: 14px;
   --fz-body: 12px;
   --fz-caption: 10px;
-  --lh-main: 1.5;
-  --lh-lg: 2.5;
+  --lh-main: 1.75;
 
   --font-sans: 'Avenir', 'Zen Kaku Gothic New', sans-serif;
   --font-serif: 'EB Garamond', 'Zen Old Mincho', serif;
@@ -81,9 +80,8 @@ blockquote, figure {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: var(--lh-lg);
   color: var(--clr-text-heading);
-  margin: var(--space-lg) 0 var(--space-sm) 0;
+  margin: var(--space-lg) 0 var(--space-md) 0;
   break-after: avoid;
 }
 
@@ -104,7 +102,7 @@ h4, h5, h6 {
 }
 
 p, ul, ol {
-  margin: var(--space-sm) 0;
+  margin-bottom: var(--space-md);
 }
 
 ul, ol {
@@ -115,12 +113,22 @@ li {
   margin: var(--space-xxs);
 }
 
+li:has(> input[type="checkbox"]) {
+  list-style: none;
+  margin-left: calc(-1 * var(--space-md));
+}
+
+li:has(> input[type="checkbox"]) > input[type="checkbox"] {
+  position: relative;
+  top: var(--space-xxs);
+}
+
 a {
   color: var(--clr-text-link);
 }
 
 blockquote {
-  margin: var(--space-sm);
+  margin: var(--space-lg);
   padding: var(--space-xxs) 0 var(--space-xxs) var(--space-md);
   border-left: 2px solid var(--clr-accent);
 }
@@ -141,7 +149,6 @@ code {
 
 table {
   width: 99%;
-  line-height: var(--lh-lg);
   margin: var(--space-md) 0;
   border-spacing: 0;
 }
@@ -149,7 +156,7 @@ table {
 th, td {
   border-right: 0.5px solid var(--clr-border);
   border-bottom: 0.5px solid var(--clr-border);
-  padding: var(--space-xs) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   text-align: left;
 }
 
@@ -188,7 +195,8 @@ hr {
 }
 
 figure {
-  margin: var(--space-sm) auto;
+  margin: var(--space-md) auto;
+  max-width: 100%;
   text-align: center;
 }
 
@@ -203,6 +211,6 @@ img {
 figcaption {
   font-size: var(--fz-caption);
   color: var(--clr-text-muted);
-  margin-top: var(--space-xxs);
+  margin: var(--space-xs) 0 var(--space-md) 0;
   text-align: center;
 }
