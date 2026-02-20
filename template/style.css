@@ -11,22 +11,21 @@
   --black-90:  oklch(0.9 0.01 240);
   --black-100: oklch(1.0    0   0);
 
-  --blue-60: oklch(0.6 0.15 260);
+  --blue-70: oklch(0.7 0.10 260);
 
   --clr-text-main: var(--black-10);
   --clr-text-heading: var(--black-20);
   --clr-text-muted: var(--black-40);
 
   --clr-bg-main: var(--black-100);
-  --clr-bg-code: var(--black-100);
   --clr-bg-pre: var(--black-60);
-  --clr-bg-table1: var(--black-60);
-  --clr-bg-table2: var(--black-80);
+  --clr-bg-th: var(--black-100);
+  --clr-bg-tbody-even: var(--black-100);
+  --clr-bg-tbody-odd: var(--black-100);
   
-  --clr-border-main: var(--black-70);
-  --clr-border-muted: var(--black-80);
+  --clr-border: var(--black-80);
 
-  --clr-accent: var(--blue-60);
+  --clr-accent: var(--blue-70);
   
   /* === Radius === */
   --radius-sm: 4px;
@@ -114,7 +113,7 @@ a {
 }
 
 blockquote {
-  margin: var(--space-sm) 0;
+  margin: var(--space-sm);
   padding: var(--space-xxs) 0 var(--space-xxs) var(--space-md);
   border-left: 2px solid var(--clr-accent);
 }
@@ -122,41 +121,61 @@ blockquote {
 pre {
   background-color: var(--clr-bg-pre);
   border-radius: var(--radius-md);
-  border: 1px solid var(--clr-border-main);
+  border: 1px solid var(--clr-border);
   overflow-x: auto;
   font-family: var(--font-code);
   margin: var(--space-md) 0;
 }
 
 code {
-  background-color: var(--clr-bg-code);
   padding: 0 var(--space-xs);
   font-family: var(--font-code);
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: var(--space-sm) 0;
+  line-height: var(--lh-lg);
+  margin: var(--space-md) 0;
+  border-spacing: 0;
 }
 
 th, td {
-  border: 1px solid var(--clr-border-main);
-  padding: var(--space-xxs) var(--space-xs);
+  border-right: 0.5px solid var(--clr-border);
+  border-bottom: 0.5px solid var(--clr-border);
+  padding: var(--space-xs) var(--space-md);
   text-align: left;
 }
 
+/* 左端の列に左ボーダーを追加 */
+th:first-child, td:first-child {
+  border-left: 0.5px solid var(--clr-border);
+}
+
+/* 先頭行に上ボーダーを追加 */
+thead tr:first-child th {
+  border-top: 0.5px solid var(--clr-border);
+}
+
+/* 四隅にのみ border-radius を適用 */
+thead tr:first-child th:first-child { border-top-left-radius: var(--radius-md); }
+thead tr:first-child th:last-child  { border-top-right-radius: var(--radius-md); }
+tbody tr:last-child td:first-child  { border-bottom-left-radius: var(--radius-md); }
+tbody tr:last-child td:last-child   { border-bottom-right-radius: var(--radius-md); }
+
 th {
-  background-color: var(--clr-bg-table1);
+  background-color: var(--clr-bg-th);
 }
 
 tbody tr:nth-child(even) {
-  background-color: var(--clr-bg-table2);
+  background-color: var(--clr-bg-tbody-even);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--clr-bg-tbody-odd);
 }
 
 hr {
   border: none;
-  border-top: 0.5px solid var(--clr-border-muted);
+  border-top: 0.5px solid var(--clr-border);
   margin: var(--space-lg) 0;
 }
 
