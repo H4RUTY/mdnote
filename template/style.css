@@ -1,17 +1,61 @@
 :root {
-  --text-color: #1e293b;
-  --heading-color: #0f172a;
-  --muted: #64748b;
-  --bg: #ffffff;
-  --border: #e2e8f0;
-  --accent: #3b8dae;
-  --code-bg: #f8fafc;
-  --code-border: #e2e8f0;
-  --code-font: 'IBM Plex Mono', Menlo, 'Zen Kaku Gothic New', monospace;
+  /* === Color === */
+  --black-10:  oklch(0.1 0.01 240);
+  --black-20:  oklch(0.2 0.01 240);
+  --black-30:  oklch(0.3 0.01 240);
+  --black-40:  oklch(0.4 0.01 240);
+  --black-50:  oklch(0.5 0.01 240);
+  --black-60:  oklch(0.6 0.01 240);
+  --black-70:  oklch(0.7 0.01 240);
+  --black-80:  oklch(0.8 0.01 240);
+  --black-90:  oklch(0.9 0.01 240);
+  --black-100: oklch(1.0    0   0);
+
+  --blue-60: oklch(0.6 0.15 260);
+
+  --clr-text-main: var(--black-10);
+  --clr-text-heading: var(--black-20);
+  --clr-text-muted: var(--black-40);
+
+  --clr-bg-main: var(--black-100);
+  --clr-bg-code: var(--black-100);
+  --clr-bg-pre: var(--black-60);
+  --clr-bg-table1: var(--black-60);
+  --clr-bg-table2: var(--black-80);
+  
+  --clr-border-main: var(--black-70);
+  --clr-border-muted: var(--black-80);
+
+  --clr-accent: var(--blue-60);
+  
+  /* === Radius === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* === Spacing === */
+  --space-xxs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+
+  /* === Typography === */
+  --fz-h1: 32px;
+  --fz-h2: 24px;
+  --fz-h3: 16px;
+  --fz-h4: 14px;
+  --fz-body: 12px;
+  --fz-caption: 10px;
+  --lh-main: 1.5;
+  --lh-lg: 2.5;
+
   --font-sans: 'Avenir', 'Zen Kaku Gothic New', sans-serif;
-  --radius: 8px;
+  --font-serif: 'EB Garamond', 'Zen Old Mincho', serif;
+  --font-code: 'IBM Plex Mono', Menlo, 'Zen Kaku Gothic New', monospace;
+
+  /* === Page Settings === */
   --page-margin: 20mm;
-  --line-height: 1.5;
+  --page-max-width: 750px;
 }
 
 @page {
@@ -21,167 +65,117 @@
 
 body {
   font-family: var(--font-sans);
-  background: var(--bg);
-  color: var(--text-color);
-  line-height: var(--line-height);
-  font-size: 13px;
+  background-color: var(--clr-bg-main);
+  color: var(--clr-text-main);
+  line-height: var(--lh-main);
+  font-size: var(--fz-body);
+  max-width: var(--page-max-width);
   margin: 0;
-  max-width: 750px;
   padding: 0;
 }
 
-/* セクション間の余白 */
-section,
-article {
-  margin-bottom: 1.8em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.25;
-  color: var(--heading-color);
-  margin-top: 2.5em;
-  margin-bottom: 0.6em;
+  line-height: var(--lh-lg);
+  color: var(--clr-text-heading);
+  margin: var(--space-lg) 0 var(--space-sm) 0;
 }
 
 h1 {
-  font-size: 1.8em;
-  padding-bottom: 0.3em;
-}
-h2 {
-  font-size: 1.45em;
-  padding-bottom: 0.2em;
-}
-h3 {
-  font-size: 1.25em;
-  color: #1e293b;
-}
-h4,
-h5,
-h6 {
-  font-size: 1.1em;
-  color: #334155;
+  font-size: var(--fz-h1);
 }
 
-p,
-ul,
-ol {
-  margin-top: 0;
-  margin-bottom: 0.9em;
+h2 {
+  font-size: var(--fz-h2);
 }
-ul,
-ol {
-  padding-left: 1.3em;
+
+h3 {
+  font-size: var(--fz-h3);
 }
+
+h4, h5, h6 {
+  font-size: var(--fz-h4);
+}
+
+p, ul, ol {
+  margin: var(--space-sm) 0;
+}
+
+ul, ol {
+  padding-left: var(--space-lg);
+}
+
 li {
-  margin: 0.2em 0;
+  margin: var(--space-xxs);
 }
 
 a {
-  color: var(--muted);
+  color: var(--clr-text-muted);
 }
 
 blockquote {
-  margin: 2em;
-  padding: 1.6em 1em 1em;
-  background: #f9fafb;
-  border-radius: var(--radius);
-  color: #475569;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: var(--space-sm) 0;
+  padding: var(--space-xxs) 0 var(--space-xxs) var(--space-md);
+  border-left: 2px solid var(--clr-accent);
 }
 
-/* チェックボックス */
-input[type="checkbox"] {
-  accent-color: var(--accent);
-}
-
-/* コードブロック */
 pre {
-  border-radius: var(--radius);
-  border: 1px solid #e2e8f0;
+  background-color: var(--clr-bg-pre);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border-main);
   overflow-x: auto;
-  font-family: var(--code-font);
-  margin: 1em 0;
+  font-family: var(--font-code);
+  margin: var(--space-md) 0;
 }
 
-/* インラインコード */
 code {
-  padding: 0 0.3rem;
-  font-family: var(--code-font);
-  border-radius: 4px;
+  background-color: var(--clr-bg-code);
+  padding: 0 var(--space-xs);
+  font-family: var(--font-code);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.2em 0;
-  font-size: 0.95em;
+  margin: var(--space-sm) 0;
 }
-th,
-td {
-  border: 1px solid var(--border);
-  padding: 0.6em 0.8em;
+
+th, td {
+  border: 1px solid var(--clr-border-main);
+  padding: var(--space-xxs) var(--space-xs);
   text-align: left;
 }
+
 th {
-  background: #f8fafc;
-  font-weight: 600;
-  color: #334155;
-}
-tbody tr:nth-child(even) {
-  background: #fafafa;
+  background-color: var(--clr-bg-table1);
 }
 
-/* 水平線 */
+tbody tr:nth-child(even) {
+  background-color: var(--clr-bg-table2);
+}
+
 hr {
   border: none;
-  border-top: 0.5px solid var(--border);
-  margin: 2em 0;
+  border-top: 0.5px solid var(--clr-border-muted);
+  margin: var(--space-lg) 0;
 }
 
-/* 画像・キャプション */
 figure {
-  margin: 1em auto;
+  margin: var(--space-sm) auto;
   text-align: center;
 }
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
 figcaption {
-  font-size: 0.9em;
-  color: var(--muted);
-  margin-top: 0.3em;
-}
-
-/* ページ分割の指定（PDF用） */
-.page-break {
-  page-break-before: always;
-  break-before: page;
-}
-
-footer {
-  font-size: 0.8em;
-  color: var(--muted);
+  font-size: var(--fz-caption);
+  color: var(--clr-text-muted);
+  margin-top: var(--space-xxs);
   text-align: center;
-  margin-top: 2em;
-  border-top: 1px solid var(--border);
-  padding-top: 0.5em;
-}
-
-/* 印刷時の微調整 */
-@media print {
-  a[href]::after {
-    content: '';
-  } /* URL表示を消す */
-  pre,
-  table {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
 }
