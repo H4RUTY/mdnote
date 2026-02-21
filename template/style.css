@@ -150,8 +150,9 @@ code {
 
 table {
   margin: var(--space-lg) 0;
-  width: 99%;
+  width: 100%;
   border-spacing: 0;
+  table-layout: auto;
 }
 
 th, td {
@@ -159,6 +160,7 @@ th, td {
   border-bottom: 0.5px solid var(--clr-border);
   padding: var(--space-sm) var(--space-md);
   text-align: left;
+  word-break: break-all;
 }
 
 /* 左端の列に左ボーダーを追加 */
