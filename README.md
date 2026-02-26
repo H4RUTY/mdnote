@@ -9,8 +9,7 @@ Markdownから美しいpdf書類を作成するツール
 
 > [!NOTE]
 > 今後の展望:  
-> - パッケージ化
-> - ライブラリ依存を減らす
+> [simonhaenisch / md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) を直接クローンしてカスタマイズ
 
 <br>
 
