@@ -2,6 +2,16 @@ Markdownから美しいpdf書類を作成するツール
 
 [📄 サンプルPDFを見る](template/note.pdf)
 
+> [!WARNING]
+> MacOSのみサポートしています.
+
+## 0. リポジトリのクローン
+
+```bash
+git clone git@github.com:H4RUTY/mdnote.git
+cd mdnote
+```
+
 ## 1. `md-to-pdf` のインストール
 
 内部的に `md-to-pdf` というツールを使用しています.  
@@ -11,11 +21,11 @@ Markdownから美しいpdf書類を作成するツール
 npm i -g md-to-pdf
 ```
 
-Big thanks to [simonhaenisch / md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) !
+Big thanks to [simonhaenisch / md-to-pdf](https://github.com/simonhaenisch/md-to-pdf)
 
 ## 2. 'mdnote' コマンド登録
 
-どこからでもコマンドを実行してノートを書き始められるようにします.
+どこからでもコマンドを実行してノートを書き始められるように, パスの通った場所にシンボリックリンクを作成します.
 
 ```bash
 chmod +x mdnote.sh
@@ -38,3 +48,8 @@ mdnote my-new-note
 hash -r    # for Bash
 rehash     # for Zsh
 ```
+
+> [!NOTE]
+> 今後の展望:  
+> - パッケージ化
+> - ライブラリ依存を減らす
