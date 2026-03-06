@@ -1,0 +1,219 @@
+:root {
+  /* === Color === */
+  --black-10:  oklch(0.1 0.01 240);
+  --black-20:  oklch(0.2 0.01 240);
+  --black-30:  oklch(0.3 0.01 240);
+  --black-40:  oklch(0.4 0.01 240);
+  --black-50:  oklch(0.5 0.01 240);
+  --black-60:  oklch(0.6 0.01 240);
+  --black-70:  oklch(0.7 0.01 240);
+  --black-80:  oklch(0.8 0.01 240);
+  --black-90:  oklch(0.9 0.01 240);
+  --black-100: oklch(1.0    0   0);
+
+  --blue-60: oklch(0.6 0.05 260);
+  --blue-70: oklch(0.7 0.05 260);
+
+  --clr-text-main: var(--black-10);
+  --clr-text-heading: var(--black-20);
+  --clr-text-link: var(--blue-60);
+  --clr-text-muted: var(--black-40);
+
+  --clr-bg-main: var(--black-100);
+  --clr-bg-pre: var(--black-100);
+  --clr-bg-th: var(--black-100);
+  --clr-bg-tbody-even: var(--black-100);
+  --clr-bg-tbody-odd: var(--black-100);
+  
+  --clr-border: var(--black-80);
+
+  --clr-accent: var(--blue-70);
+  
+  /* === Radius === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* === Spacing === */
+  --space-xxs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+
+  /* === Typography === */
+  --fz-h1: 32px;
+  --fz-h2: 24px;
+  --fz-h3: 18px;
+  --fz-h4: 14px;
+  --fz-body: 12px;
+  --fz-caption: 10px;
+  --lh-main: 1.75;
+
+  --font-sans: 'Avenir', 'Zen Kaku Gothic New', sans-serif;
+  --font-serif: 'EB Garamond', 'Zen Old Mincho', serif;
+  --font-code: 'IBM Plex Mono', Menlo, 'Zen Kaku Gothic New', monospace;
+
+  /* === Page Settings === */
+  --page-margin: 20mm;
+  --page-max-width: 750px;
+}
+
+@page {
+  size: A4;
+  margin: var(--page-margin);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--clr-bg-main);
+  color: var(--clr-text-main);
+  line-height: var(--lh-main);
+  font-size: var(--fz-body);
+  max-width: var(--page-max-width);
+  margin: 0;
+  padding: 0;
+}
+
+blockquote, figure {
+  break-inside: avoid;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--clr-text-heading);
+  margin: var(--space-lg) 0 var(--space-md) 0;
+  break-after: avoid;
+}
+
+h1 {
+  font-size: var(--fz-h1);
+}
+
+h2 {
+  font-size: var(--fz-h2);
+}
+
+h3 {
+  font-size: var(--fz-h3);
+}
+
+h4, h5, h6 {
+  font-size: var(--fz-h4);
+}
+
+p, ul, ol {
+  margin-bottom: var(--space-md);
+}
+
+ul, ol {
+  padding-left: var(--space-lg);
+}
+
+li {
+  margin: var(--space-xxs);
+}
+
+li:has(> input[type="checkbox"]) {
+  list-style: none;
+  margin-left: calc(-1 * var(--space-md));
+}
+
+li:has(> input[type="checkbox"]) > input[type="checkbox"] {
+  position: relative;
+  top: var(--space-xxs);
+}
+
+a {
+  color: var(--clr-text-link);
+}
+
+blockquote {
+  margin: var(--space-lg) 0 var(--space-lg) var(--space-md);
+  padding: var(--space-xxs) 0 var(--space-xxs) var(--space-lg);
+  border-left: 2px solid var(--clr-accent);
+}
+
+pre {
+  margin: var(--space-lg) 0;
+  background-color: var(--clr-bg-pre);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border);
+  overflow-x: auto;
+  font-family: var(--font-code);
+}
+
+code {
+  padding: 0 var(--space-xs);
+  font-family: var(--font-code);
+}
+
+table {
+  margin: var(--space-lg) 0;
+  width: 100%;
+  border-spacing: 0;
+  table-layout: auto;
+}
+
+th, td {
+  border-right: 0.5px solid var(--clr-border);
+  border-bottom: 0.5px solid var(--clr-border);
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  word-break: break-all;
+}
+
+/* 左端の列に左ボーダーを追加 */
+th:first-child, td:first-child {
+  border-left: 0.5px solid var(--clr-border);
+}
+
+/* 先頭行に上ボーダーを追加 */
+thead tr:first-child th {
+  border-top: 0.5px solid var(--clr-border);
+}
+
+/* 四隅にのみ border-radius を適用 */
+thead tr:first-child th:first-child { border-top-left-radius: var(--radius-md); }
+thead tr:first-child th:last-child  { border-top-right-radius: var(--radius-md); }
+tbody tr:last-child td:first-child  { border-bottom-left-radius: var(--radius-md); }
+tbody tr:last-child td:last-child   { border-bottom-right-radius: var(--radius-md); }
+
+th {
+  background-color: var(--clr-bg-th);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--clr-bg-tbody-even);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--clr-bg-tbody-odd);
+}
+
+hr {
+  border: none;
+  border-top: 0.5px solid var(--clr-border);
+  margin: var(--space-xl) 0;
+}
+
+figure {
+  margin: var(--space-lg) auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+figcaption {
+  font-size: var(--fz-caption);
+  color: var(--clr-text-muted);
+  margin: var(--space-xs) 0 var(--space-md) 0;
+  text-align: center;
+}
